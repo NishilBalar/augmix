@@ -1,0 +1,5 @@
+__pycache__/*
+augmix_env/*
+*.npy
+*.sh
+*.pyc
