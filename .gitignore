@@ -3,3 +3,7 @@ augmix_env/*
 *.npy
 *.sh
 *.pyc
+*.tar
+*-py
+*.gz
+README.txt

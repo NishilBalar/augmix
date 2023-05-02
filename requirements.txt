@@ -1,4 +1,6 @@
 numpy>=1.15.0
 Pillow>=6.1.0
-torch==1.2.0
-torchvision==0.2.2
+torch==1.8.1
+torchvision==0.9.1
+timm==0.6.12
+tensorboard==2.5.0
