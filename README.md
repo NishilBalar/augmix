@@ -45,16 +45,20 @@ training and evaluation on CIFAR-10/100-C and ImageNet-C.
 1.  Install PyTorch and other required python libraries with:
 
     ```
+    python3 -m venv ./augmix_env
+    source augmix_env/bin/activate
     pip install -r requirements.txt
     ```
 
-2.  Download CIFAR-10-C and CIFAR-100-C datasets with:
+2.  Download CIFAR-10-C, CIFAR-10-P and CIFAR-100-C datasets with:
 
     ```
     mkdir -p ./data/cifar
     curl -O https://zenodo.org/record/2535967/files/CIFAR-10-C.tar
+    curl -O https://zenodo.org/record/2535967/files/CIFAR-10-P.tar
     curl -O https://zenodo.org/record/3555552/files/CIFAR-100-C.tar
     tar -xvf CIFAR-100-C.tar -C data/cifar/
+    tar -xvf CIFAR-10-P.tar -C data/cifar/
     tar -xvf CIFAR-10-C.tar -C data/cifar/
     ```
 
@@ -94,6 +98,8 @@ Weights for a ResNet-50 ImageNet classifier trained with AugMix for 180 epochs a
 [here](https://drive.google.com/file/d/1z-1V3rdFiwqSECz7Wkmn4VJVefJGJGiF/view?usp=sharing).
 
 This model has a 65.3 mean Corruption Error (mCE) and a 77.53% top-1 accuracy on clean ImageNet data.
+
+
 
 ## Citation
 
