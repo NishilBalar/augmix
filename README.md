@@ -99,7 +99,43 @@ Weights for a ResNet-50 ImageNet classifier trained with AugMix for 180 epochs a
 
 This model has a 65.3 mean Corruption Error (mCE) and a 77.53% top-1 accuracy on clean ImageNet data.
 
+## OMNI Cluster (Uni-Siegen) access 
 
+Allocate Workspace: `ws_allocate augmix <duration> -r <number of days> -m <your e-mail address>`
+
+List modules: `module list`
+
+Add GPU modules:
+```
+module load GpuModules
+# As per python version
+module load pytorch-py37-cuda11.2-gcc8/1.9.1
+pytorch-py39-cuda11.2-gcc9/1.9.1
+```
+
+Borrow GPU on Cluster: `srun -p gpu --gres=gpu:2 -t 7:59:59 --ntasks=1 --cpus-per-task=8 --mem=20G --pty /bin/bash`
+
+Further documentation can be found [here](https://cluster.uni-siegen.de/).
+
+## Run TensorBoard
+
+`tensorboard --logdir=runs`
+
+## Tests
+```
+python cifar.py -m resnet18_pretrained -lr 0.015 --optimizer ADAM_W -s ./snapshots/res18_p_adamw > res18_p_adamw.txt
+python cifar.py -m resnet18_not_pretrained -lr 0.025 --optimizer ADAM_W -s ./snapshots/res18_np_adamw > res18_np_adamw.txt
+
+python cifar.py -m resnet18_pretrained -lr 0.015 --optimizer SGD -s ./snapshots/res18_p_sgd > res18_p_sgd.txt
+python cifar.py -m resnet18_not_pretrained -lr 0.025 --optimizer SGD -s ./snapshots/res18_np_sgd > res18_np_sgd.txt
+
+
+python cifar.py -m ConvNeXt_tiny_pretrained -lr 0.003 --optimizer ADAM_W -s ./snapshots/convnext_p_adamw > convnext_p_adamw.txt
+python cifar.py -m ConvNeXt_tiny_not_pretrained -lr 0.004 --optimizer ADAM_W -s ./snapshots/convnext_np_adamw > convnext_np_adamw.txt
+
+python cifar.py -m ConvNeXt_tiny_pretrained -lr 0.003 --optimizer SGD -s ./snapshots/convnext_p_sgd > convnext_p_sgd.txt
+python cifar.py -m ConvNeXt_tiny_not_pretrained -lr 0.004 --optimizer SGD -s ./snapshots/convnext_np_sgd > convnext_np_sgd.txt
+```
 
 ## Citation
 
