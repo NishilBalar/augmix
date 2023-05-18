@@ -139,7 +139,7 @@ python cifar.py -m ConvNeXt_tiny_not_pretrained -lr 0.004 --optimizer SGD -s ./s
 
 ## Taken Approach and Results
 
-please find pdf file [here](Training_program_for_studienarbeit_projectarbeit.pdf)
+please find pdf file [here](https://github.com/NishilBalar/augmix/blob/master/Training_program_for_Studienarbeit_Projektarbeit.pdf)
 
 ## Citation
 
