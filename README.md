@@ -137,6 +137,10 @@ python cifar.py -m ConvNeXt_tiny_pretrained -lr 0.003 --optimizer SGD -s ./snaps
 python cifar.py -m ConvNeXt_tiny_not_pretrained -lr 0.004 --optimizer SGD -s ./snapshots/convnext_np_sgd > convnext_np_sgd.txt
 ```
 
+## Taken Approach and Results
+
+please find pdf file [here](Training_program_for_studienarbeit_projectarbeit.pdf)
+
 ## Citation
 
 If you find this useful for your work, please consider citing
